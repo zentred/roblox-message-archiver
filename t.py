@@ -19,7 +19,7 @@ def findMessages():
         firstPage = req.get(f'https://privatemessages.roblox.com/v1/messages?messageTab=inbox&pageNumber={nextPage}&pageSize=20')
         if firstPage.status_code == 200:
             data = firstPage.json()['collection']
-            random.randint(0, firstPage.json()['totalPages'])
+            nextPage = random.randint(0, firstPage.json()['totalPages'])
             toArchive = []
             for message in data:
                 if message['sender']['id'] == 1:
