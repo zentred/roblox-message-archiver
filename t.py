@@ -27,8 +27,6 @@ def findMessages():
                 else: messagesSkipped += 1
             if len(toArchive) != 0:
                 archiveMessages(toArchive)
-        else:
-            print(firstPage.text)
 
 def grabCsrf():
     return req.post('https://auth.roblox.com/v1/logout').headers['X-CSRF-TOKEN']
